@@ -8,6 +8,7 @@ from bnpl.models.order import Order, OrderItem
 class OrderService:
     def __init__(self, inventory, customers, orders):
         self.inventory = inventory
+        # critical section
         self.customers = customers
         self.orders = orders
         self.lock = RLock()
